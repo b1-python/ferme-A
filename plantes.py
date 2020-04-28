@@ -48,13 +48,14 @@ def creerPlante(nom):
     else:
         raise ValueError()
 
-courgette = creerPlante("courgette")
-tomate = creerPlante("tomate")
 
-patate = creerPlante("patate")
+## Le code ci dessous sert juste à tester le module :
+## -> création de plusieurs légume et vente
 
-print("vente courgette : ", courgette.vendre())
+#courgette = creerPlante("courgette")
+#tomate = creerPlante("tomate")
+#patate = creerPlante("patate")
 
-print("vente tomate : ", tomate.vendre())
-
-print("vente patate : ", patate.vendre())
+#print("vente courgette : ", courgette.vendre())
+#print("vente tomate : ", tomate.vendre())
+#print("vente patate : ", patate.vendre())
