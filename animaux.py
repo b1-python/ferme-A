@@ -1,11 +1,18 @@
 class Animal:
-
+    """
+    Classe ABSTRAITE Animal.
+    Sert à représenter un Animal. On ne créera jamais d'instance de type Animal, mais
+    on créera des instances des sous classes.
+    Cette classe implémente la logique commune à tous les animaux, et déclare deux méthodes abstraites
+    qui seront redéfinies pour chaque type d'animal => c'est du POLYMORPHISME.
+    """
     def __init__(self, prixAchat, crie):
         self.age = 0
         self.prixAchat = prixAchat
         self.crie = crie
 
     def vieillir(self):
+        """ Fait veillir l'animal d'un an """
         self.age += 1
 
     def getAge(self):
@@ -26,6 +33,7 @@ class Animal:
 
 
 class Vache(Animal):
+    """ Représente une Vache """
 
     def __init__(self):
         Animal.__init__(self,100,"meuuuuh")
@@ -49,6 +57,7 @@ class Vache(Animal):
 
 
 class Oie(Animal):
+    """ Représente une Oie """
 
     def __init__(self):
         Animal.__init__(self,15, "kwac")
@@ -67,6 +76,7 @@ class Oie(Animal):
 
 
 class Poule(Animal):
+    """ Représente une Poule """
 
     def __init__(self):
         Animal.__init__(self,10, "cotcot")
@@ -105,3 +115,4 @@ def creerAnimal(nom):
 # Test des classes
 vache = Vache()
 oie = Oie()
+
