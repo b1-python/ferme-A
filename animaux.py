@@ -6,10 +6,14 @@ class Animal:
     Cette classe implémente la logique commune à tous les animaux, et déclare deux méthodes abstraites
     qui seront redéfinies pour chaque type d'animal => c'est du POLYMORPHISME.
     """
-    def __init__(self, prixAchat, crie):
+    def __init__(self, nom, prixAchat, crie):
+        self.nom = nom
         self.age = 0
         self.prixAchat = prixAchat
         self.crie = crie
+
+    def getNom(self):
+        return self.nom
 
     def vieillir(self):
         """ Fait veillir l'animal d'un an """
@@ -31,12 +35,16 @@ class Animal:
     def vendreAnimal(self):
         pass
 
+    def toString(self):
+        """ Renvoie une chaine de caractère qui représente l'animal """
+        return self.nom + "("+str(self.age)+")"
+
 
 class Vache(Animal):
     """ Représente une Vache """
 
     def __init__(self):
-        Animal.__init__(self,100,"meuuuuh")
+        Animal.__init__(self,"vache", 100,"meuuuuh")
 
     # Redéfinition des deux méthodes abstraites de la classe Animal
     def vendreProduit(self):
@@ -60,7 +68,7 @@ class Oie(Animal):
     """ Représente une Oie """
 
     def __init__(self):
-        Animal.__init__(self,15, "kwac")
+        Animal.__init__(self, "oie", 15, "kwac")
 
     # Redéfinition des deux méthodes abstraites de la classe Animal
     def vendreProduit(self):
@@ -79,7 +87,7 @@ class Poule(Animal):
     """ Représente une Poule """
 
     def __init__(self):
-        Animal.__init__(self,10, "cotcot")
+        Animal.__init__(self, "poule", 10, "cotcot")
 
     # Redéfinition des deux méthodes abstraites de la classe Animal
     def vendreProduit(self):
