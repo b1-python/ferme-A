@@ -102,6 +102,7 @@ while True:
     # On sort de la boucle de la saison => démarrage d'une nouvelle saison
     # On fait vieillir tous les animaux
     for animal in betail:
+        print(animal.crier())
         animal.vieillir()
 
 
